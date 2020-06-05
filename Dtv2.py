@@ -79,7 +79,13 @@ elif doings ==4:
    user3 = random.choice(online)
    user4 = random.choice(online)
    user5 = random.choice(online)
-   onl=user1,user2,user3,user4,user5
+   user6 = random.choice(online)
+   user7 = random.choice(online)
+   user8 = random.choice(online)
+   user9 = random.choice(online)
+   user10 = random.choice(online)
+   
+   onl=user1,user2,user3,user4,user5,user6,user7,user8,user9,user10
    print("\n   Введите название беседы \n   По умолчанию смс - 'Я гей'" )
    name =str(input(" Название :"))
    if name == "":
