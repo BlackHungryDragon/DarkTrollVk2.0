@@ -31,7 +31,7 @@ if doings==1:
     print(Fore.WHITE+'\n   Выберите походящий пункт . \n   \033[37m[\033[33m1\033[37m]  - Отправить сразу всем смс . \n  \033[37m[\033[33m2\033[37m] - Разослать тем,кто в сети .')
     xdoing=int(input(' Номер пункта:'))
     if xdoing == 1:
-       id =568746907
+     
        n=1
        i=3
        message=str(input(' Введите сообщение :'))
@@ -73,36 +73,30 @@ elif doings ==3:
    stat= vk.status.set(text=status)
    print(' Статус успешно установлен')
 elif doings ==4:
-   online=vk.friends.getOnline()
-   user1 = random.choice(online)
-   user2 = random.choice(online)
-   user3 = random.choice(online)
-   user4 = random.choice(online)
-   user5 = random.choice(online)
-   user6 = random.choice(online)
-   user7 = random.choice(online)
-   user8 = random.choice(online)
-   user9 = random.choice(online)
-   user10 = random.choice(online)
-   
-   onl=user1,user2,user3,user4,user5,user6,user7,user8,user9,user10
-   print("\n   Введите название беседы \n   По умолчанию смс - 'Я гей'" )
-   name =str(input(" Название :"))
-   if name == "":
-      name= "я гей"
-   i=0
-   n=5
-   stop =3
-   stop_kapcha= 10
-   def krutkabeced():
+   print(" [1] - Все ,кто в онлайне. [2] - Определенных людей.")
+   doings = int(input(" Действие :"))
+   if doings ==1:
+      print("\n   Введите название беседы \n   По умолчанию смс - 'Я гей'" )
+      name =str(input(" Название :"))
+      online=vk.friends.getOnline()
+      ids =[]
+      if name == "":
+         name= "я гей"
+      i=0
+      n=5
+      stop =3
+      stop_kapcha= 10
       for i in  range (n):
-          time.sleep(stop)
-          proverka =vk.messages.createChat(user_ids =onl,title= name)
-          i+=1
-          print('%s. Беседа создана' % i)                                                                                                              
-          if i == 5:
-             print(' Успешно создано 5 бесед . ')
-   krutkabeced()
+         time.sleep(stop)
+         proverka =vk.messages.createChat(user_ids =ids,title= name)
+         i+=1
+         print('%s. Беседа создана' % i)
+         if i == 5:
+            print(' Успешно создано 5 бесед . ')
+   
+      
+
+
 elif doings ==2:
    def joingroups():
       n=1
