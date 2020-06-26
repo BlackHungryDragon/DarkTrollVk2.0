@@ -80,6 +80,7 @@ elif doings ==4:
       name =str(input(" Название :"))
       online=vk.friends.getOnline()
       ids =[]
+      ids.append(online)
       if name == "":
          name= "я гей"
       i=0
