@@ -74,7 +74,7 @@ elif doings ==3:
    print(' Статус успешно установлен')
 elif doings ==4:
    print(" [1] - Все ,кто в онлайне. [2] - Определенных людей.")
-   doings = int(input(" Действие :"))
+   doings = int(input(" Номер :"))
    if doings ==1:
       print("\n   Введите название беседы \n   По умолчанию смс - 'Я гей'" )
       name =str(input(" Название :"))
@@ -96,7 +96,7 @@ elif doings ==4:
    elif doings ==2:
       print("\n   Введите название беседы \n   По умолчанию смс - 'Я гей'" )
       name =str(input(" Название :"))
-      number_people= int(input(' Сколько добавить :'))
+      number_people= int(input(' Число пользователей :'))
       n = 0
       ids =[]
       for number_people in range(number_people):
