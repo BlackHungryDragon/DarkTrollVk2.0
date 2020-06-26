@@ -93,7 +93,28 @@ elif doings ==4:
          print('%s. Беседа создана' % i)
          if i == 5:
             print(' Успешно создано 5 бесед . ')
-   
+   elif doings ==2:
+      print("\n   Введите название беседы \n   По умолчанию смс - 'Я гей'" )
+      name =str(input(" Название :"))
+      number_people= int(input(' Сколько добавить :'))
+      n = 0
+      ids =[]
+      for number_people in range(number_people):
+         id = int(input(' id:'))
+         ids.append(id)
+      if name == "":
+         name= "я гей"
+      i=0
+      n=5
+      stop =3
+      stop_kapcha= 10
+      for i in  range (n):
+         time.sleep(stop)
+         proverka =vk.messages.createChat(user_ids =ids,title= name)
+         i+=1
+         print('%s. Беседа создана' % i)
+         if i == 5:
+            print(' Успешно создано 5 бесед . ')
       
 
 
