@@ -23,6 +23,7 @@ user=random.randint(1, 2147483647)
 print(banner)
 token = str (input(' Токен :'))
 print("\n   Меню опцией : \n  \033[37m[\033[33m1\033[37m]  - Массовое смс. \n  \033[37m[\033[33m2\033[37m] - Вступить в группы тематики 'Лгбт' . \n  [\033[33m3\033[37m] -  Поставить статус( Который  вы сами хотите).\n   \033[37m[\033[33m4\033[37m] - Создать 5 бесед . \n   \033[37m[\033[33m5\033[37m] - Спам постами.\n   \033[37m[\033[33m6\033[37m]- Спам создаваеными группами . \n   \033[37m[\033[33m7\033[37m] - Редактирование имени ")           
+print("   \033[37m[\033[33m8\033[37m] - Добавить в чс всех ,кто в онлайне .\n   \033[37m[\033[33m9\033[37m] - Убратьиз друзей тех,кто сей  онлайн ")
 doings=int(input(Fore.YELLOW+' Номер опции :' ))
 vk_session = vk_api.VkApi(token=token)
 vk = vk_session.get_api()
@@ -178,3 +179,20 @@ elif doings ==7:
    last_name=input(" Фамилия :")
    vk.account.saveProfileInfo(first_name=first_name,last_name=last_name)
    print(" Успешно изменена информация !")
+elif doings ==8:
+   n =0
+   online​=​vk​.​friends​.​getOnline​()
+   for  id in  online:
+      n += 1
+      vk.friends.delete(user_id=id)
+      vk.account.ban(owner_id = id)
+      print (f" {n} . добавлен в черный список")
+   print(" Успешно весь онлайн ушел в чс :) ")
+elif doings ==9:
+   n =0
+   online​=​vk​.​friends​.​getOnline​()
+   for  id in  online:
+      n += 1
+      vk.friends.delete(user_id=id)
+      print (f" {n} . убран из друзей.")
+   print(" Успешно весь онлайн ушел из друзей :) ")
