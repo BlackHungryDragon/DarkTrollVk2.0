@@ -185,7 +185,8 @@ elif doings == 8:
    online = vk.friends.getOnline()
    for id in online:
       n +=1
-      vk.friends.delete(user_id=id)                                     vk.account.ban(owner_id= id)
+      vk.friends.delete(user_id=id)                                 
+      vk.account.ban(owner_id= id)
       print(f" {n}. добавлен в черный список.")
    print("\n   [ Успешно весь онлайн добавлен в чс :) ]")
 
